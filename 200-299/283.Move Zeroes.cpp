@@ -1,12 +1,5 @@
 class Solution {
 public:
-    int getNonZero(vector<int>& nums, int start) {
-        for (int j = start; j < nums.size(); ++j) {
-            if (nums[j] != 0) return j;
-        }
-        return -1;
-    }
-    
     void moveZeroes(vector<int>& nums) {
         int j;
         for (int i = 0; i < nums.size(); ++i) {
@@ -19,5 +12,12 @@ public:
                 }
             }
         }
+    }
+
+    int getNonZero(vector<int>& nums, int start) {
+        for (int j = start; j < nums.size(); ++j) {
+            if (nums[j] != 0) return j;
+        }
+        return -1;
     }
 };

@@ -1,5 +1,17 @@
 class Solution {
 public:
+    bool containsDuplicate(vector<int>& nums) {
+        vector<int> sorted;
+        int pos;
+        for (int num: nums) {
+            pos = BinarySearch(sorted, num);
+            cout << pos << endl;
+            if (pos == -1) return true;
+            sorted.insert(sorted.begin() + pos, num);
+        }
+        cout << endl;
+        return false;
+    }
 
     int BinarySearch(vector<int>& sorted, int num) {
         int count = sorted.size();
@@ -17,18 +29,4 @@ public:
         }
         return a;
     }
-
-    bool containsDuplicate(vector<int>& nums) {
-        vector<int> sorted;
-        int pos;
-        for (int num: nums) {
-            pos = BinarySearch(sorted, num);
-            cout << pos << endl;
-            if (pos == -1) return true;
-            sorted.insert(sorted.begin() + pos, num);
-        }
-        cout << endl;
-        return false;
-    }
-
 };

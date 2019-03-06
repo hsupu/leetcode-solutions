@@ -24,21 +24,20 @@ int find_r(vector<int>& nums, int i, int target) {
         return 1;
     }
 }
-    
+
+int bsearch(vector<int>& nums, int l, int r, int target, comparator cmp) {
+    while (l < r) {
+        int m = (l + r) / 2;
+        int t = cmp(nums, m, target);
+        if (t == 0) return m;
+        if (t < 0) l = m + 1;
+        else r = m;
+    }
+    return -1;
+}
+
 class Solution {
 public:
-    
-    int bsearch(vector<int>& nums, int l, int r, int target, comparator cmp) {
-        while (l < r) {
-            int m = (l + r) / 2;
-            int t = cmp(nums, m, target);
-            if (t == 0) return m;
-            if (t < 0) l = m + 1;
-            else r = m;
-        }
-        return -1;
-    }
-    
     vector<int> searchRange(vector<int>& nums, int target) {
         vector<int> ret;
         int size = nums.size();

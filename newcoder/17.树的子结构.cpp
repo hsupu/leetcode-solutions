@@ -1,8 +1,7 @@
 class Solution {
 public:
     
-    bool IsSubtree(TreeNode* pRoot1, TreeNode* pRoot2)
-    {
+    bool IsSubtree(TreeNode* pRoot1, TreeNode* pRoot2) {
         if (pRoot1 || pRoot2) {
             if (pRoot1 && pRoot2) {
                 if (pRoot1->val != pRoot2->val) return false;
@@ -15,8 +14,7 @@ public:
         }
     }
     
-    bool HasSubtree(TreeNode* pRoot1, TreeNode* pRoot2)
-    {
+    bool HasSubtree(TreeNode* pRoot1, TreeNode* pRoot2) {
         if (pRoot1 == nullptr || pRoot2 == nullptr) return false;
         if (IsSubtree(pRoot1, pRoot2)) return true;
         return HasSubtree(pRoot1->left, pRoot2) || HasSubtree(pRoot1->right, pRoot2);

@@ -1,7 +1,6 @@
 class Solution {
 public:
-    ListNode* Merge(ListNode* pHead1, ListNode* pHead2)
-    {
+    ListNode* Merge(ListNode* pHead1, ListNode* pHead2) {
         ListNode* head = new ListNode(0);
         ListNode* node = head;
         ListNode* temp;

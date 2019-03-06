@@ -1,5 +1,4 @@
-class Solution
-{
+class Solution {
 public:
     void push(int node) {
         stack1.push(node);
